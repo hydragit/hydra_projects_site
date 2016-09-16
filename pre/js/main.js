@@ -1,3 +1,3 @@
 var logger = require('./logger.js');
 
-logger.log('Welcome Hydra, it works, enjoy!!! :)');
+logger.log('Welcome Hydra, and it can change as well!!! :)');
