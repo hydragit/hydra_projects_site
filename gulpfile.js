@@ -80,4 +80,4 @@ gulp.task('watch', function() {
 
 
 
-gulp.task('default', ['watch', 'serve', 'pug']);
+gulp.task('default', ['watch', 'serve', 'pug', 'http']);
