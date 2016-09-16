@@ -29,7 +29,7 @@ gulp.task('serve', ['sass'], function() {
     browserSync.init({
         server: outputDir
     });
-
+    gulp.watch(outputDir + "gulpfile.js").on('change', browserSync.reload);
     gulp.watch(outputDir + "css/**/*.css").on('change', browserSync.reload);
     gulp.watch(outputDir + "**/*.html").on('change', browserSync.reload);
     gulp.watch(outputDir + "js/**/*.js").on('change', browserSync.reload);
