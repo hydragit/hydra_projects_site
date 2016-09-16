@@ -13,16 +13,19 @@ var env = process.env.NODE_ENV || 'development';
 var outputDir = './';
 var inputDir = './pre/';
 
+// Simple Server + watching *.js files
 gulp.task('http', function(){
   http.createServer(
     ecstatic({ root: outputDir })
   ).listen(8080);
 
   console.log('Listening on :8080');
-  gulp.watch(inputDir + 'js/**/*.js', function(){
+  gulp.watch(inputDir + 'js/**/*.js', function() {
     gulp.run('js');
   });
 });
+
+
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
 
@@ -80,4 +83,4 @@ gulp.task('watch', function() {
 
 
 
-gulp.task('default', ['watch', 'serve', 'pug', 'http']);
+gulp.task('default', ['watch', 'serve', 'pug', 'js', 'sass' ,'http']);
