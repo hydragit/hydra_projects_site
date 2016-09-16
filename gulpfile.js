@@ -46,7 +46,7 @@ gulp.task('sass', function() {
 	}
 	return gulp.src(inputDir + 'sass/main.scss')
 	.pipe(sass(config))
-	.pipe(gulp.dest(outputDir + './css'))
+	.pipe(gulp.dest(outputDir + 'css'))
   .pipe(browserSync.stream());
 });
 
@@ -56,7 +56,7 @@ gulp.task('js', function() {
 	return gulp.src(inputDir + 'js/**/*.js')
 	.pipe(browserify( { debug: env === 'development'} ))
 	.pipe(gulpif(env === 'production', uglify()))
-	.pipe(gulp.dest(outputDir + './js'))
+	.pipe(gulp.dest(outputDir + 'js'))
    .pipe(browserSync.stream());
 
 });
@@ -80,4 +80,4 @@ gulp.task('watch', function() {
 
 
 
-gulp.task('default', ['watch', 'http', 'serve', 'pug', 'js', 'sass']);
+gulp.task('default', ['watch', 'serve', 'pug']);

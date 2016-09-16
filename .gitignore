@@ -85,6 +85,7 @@ build/
 dist/
 maps/
 _site
+.vscode
 
 # Linux filea #
 #####################
