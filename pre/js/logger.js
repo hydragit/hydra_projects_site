@@ -1,6 +1,6 @@
 module.exports = {
 	log: function(string) {
-		if (console) console.log(string, string);
+		if (console) console.log(string);
 	}
 
 };
